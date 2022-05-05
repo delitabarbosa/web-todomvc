@@ -21,6 +21,7 @@
         "automation"
     ],
     "author": "Delita Barbosa da Silva",
+    "license": "ISC",
     "devDependencies": {
         "mochawesome": "^6.3.1",
         "mochawesome-merge": "^4.2.0"
