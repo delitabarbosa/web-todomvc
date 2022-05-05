@@ -25,3 +25,12 @@ jobs:
         cache: 'yarn'
     - run: yarn
     - run: yarn cy:to-do-mvc
+    - name: 'Upload Artifact'
+      uses: actions/upload-artifact@v3
+      with:
+        name: my-artifacts
+        paths: |
+          - report/
+          - mochawesome-report/
+          - mochawesome-report.html
+        retention-days: 5
