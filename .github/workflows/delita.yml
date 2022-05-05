@@ -27,7 +27,7 @@ jobs:
     needs: test
     steps:
     - name: 'Realizando Upload de Artefatos de Teste'
-    - uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v3
       with:
         name: evidencias
         path: report/
