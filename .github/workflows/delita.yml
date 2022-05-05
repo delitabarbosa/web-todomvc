@@ -6,16 +6,14 @@ on:
   workflow_dispatch:
 
 jobs:
-  build:
+  pre-teste:
     runs-on: ubuntu-latest
     steps:
       - name: Run a one-line script
-        run: echo Hello, World
+        run: yarn 
 
-  teste:
+  testes:
     runs-on: ubuntu-latest
     steps:
       - name: Run a one-line script
-        run: |
-          yarn 
-          yarn cy:to-do-mvc
+        run: yarn cy:to-do-mvc
