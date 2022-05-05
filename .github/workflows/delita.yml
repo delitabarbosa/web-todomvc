@@ -9,12 +9,15 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [16.x]
     steps:
     - uses: actions/checkout@v3
-    - name: Usando Node.js 16.x e Executando Testes
+    - name: Usando Node.js ${{ matrix.node-version }} e Executando Testes
       uses: actions/setup-node@v3
       with:
-        node-version: 16.x
+        node-version: ${{ matrix.node-version }}
         cache: 'yarn'
     - run: yarn
     - run: yarn cy:to-do-mvc
