@@ -1,0 +1,14 @@
+# This is a basic workflow to help you get started with Actions
+
+name: Rotina de Automação
+on:
+  workflow_dispatch:
+
+jobs:
+  teste:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run a multi-line script
+        run: |
+          yarn 
+          yarn cy:to-do-mvc
