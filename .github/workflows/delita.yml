@@ -3,7 +3,9 @@
 name: Rotina Testes
 
 on:
-  workflow_dispatch:
+  push:
+    branches:
+      - delita
 
 jobs:
   pre-testes:
