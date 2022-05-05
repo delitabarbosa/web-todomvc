@@ -1,0 +1,51 @@
+stages:
+  - teste
+  - merge-report
+  - report
+
+todo-mvc:
+  stage: teste
+  before_script:
+    - yarn
+  script:
+    - yarn cy:to-do-mvc
+  artifacts:
+    name: "result"
+    when: always
+    paths:
+      - report/
+      - mochawesome-report/
+      - mochawesome-report.html
+  when: always
+  retry: 1
+
+merge-report:
+  stage: merge-report
+  before_script:
+    - yarn
+  script:
+    - yarn mocha:merge:json
+    - yarn mocha:merge:html
+  when: always
+  artifacts:
+    name: "result"
+    when: always
+    paths:
+      - report/
+      - mochawesome-report/
+  dependencies:
+    - todo-mvc
+
+pages:
+  stage: report
+  script:
+    - rm -rf public
+    - mkdir -p public
+    - mv mochawesome-report/* ./public
+  only:
+    - master
+  when: always
+  artifacts:
+    expire_in: 1 hours
+    paths:
+      - public
