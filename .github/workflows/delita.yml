@@ -7,34 +7,26 @@ on:
     branches: [ delita ]
 
 jobs:
-  pre-teste:
+  test:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version: [16.x]
-        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
     steps:
     - uses: actions/checkout@v3
-    - name: Use Node.js ${{ matrix.node-version }}
+    - name: Usando Node.js 16.x
       uses: actions/setup-node@v3
       with:
-        node-version: ${{ matrix.node-version }}
+        node-version: 16.x
         cache: 'yarn'
+    - name: Executando Testes
     - run: yarn
-    
-  testes:
-    runs-on: ubuntu-latest
-    needs: pre-teste
-    steps:
     - run: yarn cy:to-do-mvc
 
   report:
     runs-on: ubuntu-latest
-    needs: testes
+    needs: test
     steps:
-    - name: 'Upload Artifact'
+    - name: 'Realizando Upload de Artefatos de Teste'
       uses: actions/upload-artifact@v3
       with:
-        name: my-artifacts
+        name: evidencias
         path: report/
-        retention-days: 5
+        retention-days: 1
