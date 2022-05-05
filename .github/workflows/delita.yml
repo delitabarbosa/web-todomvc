@@ -4,12 +4,16 @@ name: Rotina Testes
 
 on:
   workflow_dispatch:
-  
+
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Run a multi-line script
-        run: |
-          yarn 
-          yarn cy:to-do-mvc
+      - name: Run a one-line script
+        run: echo Hello, World
+
+  teste:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run a one-line script
+        run: yarn 
