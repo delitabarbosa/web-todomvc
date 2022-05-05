@@ -29,5 +29,5 @@ jobs:
       uses: actions/upload-artifact@v3
       with:
         name: my-artifacts
-        paths: report/
+        path: report/
         retention-days: 5
