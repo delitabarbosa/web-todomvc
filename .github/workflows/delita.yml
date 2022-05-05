@@ -6,16 +6,17 @@ on:
   workflow_dispatch:
 
 jobs:
-  pre-teste:
+  pre-testes:
     runs-on: ubuntu-latest
     steps:
       - name: Run a one-line script
         run: yarn 
-
+        
   testes:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./web-todomvc
     steps:
-      - name: Run a one-line script
-        run: |
-          cd web-todomvc
-          yarn cy:to-do-mvc
+      - name: Run Tests
+        run: yarn cy:to-do-mvc
