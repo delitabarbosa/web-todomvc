@@ -1,7 +1,47 @@
-# web-todomvc
-Atalhos para executar os testes:
+<div align="center">
+<h1 align="center"><b> AUTOMAÇÃO DE TESTES - TO DO MVC </b></h1>
+</div>
 
-    • npm run cy:open - executa com desmontração dos passos
-    • npm run test - executa sem demonstração e gera relatórios para allure
-    • npm run allure:open - abre o relatório com reports em html
-    • npm run allure:clear - limpa todos os diretórios que foram gerados para relatórios do allure
+<br>
+
+## **CONFIGURAÇÃO DO PROJETO**
+- Clonar o repositório <br> `https://github.com/delitabarbosa/web-todomvc.git`
+
+<br>
+
+## **TECNOLOGIAS UTILIZADAS**
+- Cypress ^9.6.0
+- Node 
+- Mochawesome
+
+<br>
+
+## **COMO EXECUTAR OS TESTES**
+
+Ao clonar o projeto, caso não tenha um npm local registrado, executar no terminal o comando:
+
+```.bash
+npm config set registry https://registry.npmjs.org/
+```
+
+E preencher as informações de login (username, password e email) com sua conta pessoal no [npm](https://www.npmjs.com/)
+
+```.bash
+npm login
+`` 
+Após isso, executar no terminal o comando para instalar as dependências utilizadas neste projeto:
+
+```.bash
+yarn install
+```
+Para executar em modo headless, executar no terminal o comando:
+
+```.bash
+yarn cy:to-do-mvc
+```
+
+Para executar em modo interativo, executar no terminal o comando e selecionar a spec que deseja executar (nessa opção você consegue "assistir" os testes sendo executados, pode verificar os passos e cada execução dos cenários)
+
+```.bash
+yarn cy:open
+```

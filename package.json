@@ -1,27 +1,34 @@
 {
-  "name": "testes-cypress",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "cy:open": "./node_modules/.bin/cypress open",
-    "cy:run": "npx cypress run --config video=false --env allure=ture",
-    "allure:generate": "allure generate allure-results",
-    "clear:allure": "rmdir /Q /S allure-results",
-    "clear:report": "rmdir /Q /S allure-report",
-    "test": "npx npm-run-all cy:run allure:generate",
-    "clear:all": "npx npm-run-all clear:allure clear:report",
-    "allure:open": "allure open allure-report"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "devDependencies": {
-    "@shelex/cypress-allure-plugin": "^2.8.6",
-    "cypress": "^4.1.0",
-    "cypress-xpath": "^1.6.2"
-  },
-  "dependencies": {
-    "cypress-image-snapshot": "^4.0.1"
-  }
+    "name": "automacao-web-to-do-mvc",
+    "version": "1.0.0",
+    "description": "Projeto de automação da aplicação To Do - MVC",
+    "main": "index.js",
+    "scripts": {
+        "delete:reports": "rm -r report/ | rm -r mochawesome-report/ | rm -r mochawesome-report.html",
+        "pretest": "npm run delete:reports",
+        "cy:open": "cypress open",
+        "cy:to-do-mvc": "cypress run --env configFile=ambiente --browser electron --reporter mochawesome --spec 'cypress/integration/to-do-mvc.spec.js'",
+        "mocha:merge:json": "npx mochawesome-merge report/json/*.json -o report/merge/output.json",
+        "mocha:merge:html": "npx marge ./report/merge/output.json"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/delitabarbosa/web-todomvc.git"
+    },
+    "keywords": [
+        "cypress",
+        "test",
+        "automation"
+    ],
+    "author": "Delita Barbosa da Silva",
+    "devDependencies": {
+        "mochawesome": "^6.3.1",
+        "mochawesome-merge": "^4.2.0"
+    },
+    "dependencies": {
+        "cypress": "^9.6.0",
+        "cypress-keycloak-commands": "^1.2.0",
+        "cypress-localstorage-commands": "^1.5.0",
+        "faker": "^5.5.3"
+    }
 }
