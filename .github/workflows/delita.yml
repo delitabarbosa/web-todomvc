@@ -16,4 +16,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Run a one-line script
-        run: yarn 
+        run: |
+          yarn 
+          yarn cy:to-do-mvc
