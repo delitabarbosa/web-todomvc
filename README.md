@@ -46,5 +46,4 @@ Para executar em modo interativo, executar no terminal o comando e selecionar a 
 yarn cy:open
 ```
 ## **INTEGRAÇÃO CONTÍNUA**
-Para consultar as rotinas de execução dos testes (pipeline) basta clicar no check verde ao lado direito no repositório
-
+Para consultar as rotinas de execução dos testes (pipeline) basta clicar no menu `[Actions](https://github.com/delitabarbosa/web-todomvc/actions)`, os testes são executados diariamente e são gerados os reportes com as evidências.
