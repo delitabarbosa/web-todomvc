@@ -5,6 +5,8 @@ on:
     branches: [ delita ]
   pull_request:
     branches: [ delita ]
+  schedule:
+    - cron: '00 7 * * 1-5'
 
 jobs:
   teste:
