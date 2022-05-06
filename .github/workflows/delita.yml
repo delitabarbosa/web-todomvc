@@ -7,14 +7,14 @@ on:
     branches: [ delita ]
 
 jobs:
-  test:
+  testes:
     runs-on: ubuntu-latest
     strategy:
       matrix:
         node-version: [16.x]
     steps:
     - uses: actions/checkout@v3
-    - name: Usando Node.js ${{ matrix.node-version }} e Executando Testes
+    - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v3
       with:
         node-version: ${{ matrix.node-version }}
@@ -24,7 +24,7 @@ jobs:
 
   report:
     runs-on: ubuntu-latest
-    needs: test
+    needs: testes
     steps:
     - name: 'Realizando Upload de Artefatos de Teste'
     - uses: actions/upload-artifact@v3
