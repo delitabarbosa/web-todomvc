@@ -1,10 +1,6 @@
 name: Rotina de Execução de Testes
 
 on:
-  push:
-    branches: [ delita ]
-  pull_request:
-    branches: [ delita ]
   schedule:
     - cron: '00 7 * * 1-5'
 
