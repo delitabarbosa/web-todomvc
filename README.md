@@ -28,7 +28,7 @@ E preencher as informações de login (username, password e email) com sua conta
 
 ```.bash
 npm login
-`` 
+```
 Após isso, executar no terminal o comando para instalar as dependências utilizadas neste projeto:
 
 ```.bash
@@ -45,3 +45,6 @@ Para executar em modo interativo, executar no terminal o comando e selecionar a 
 ```.bash
 yarn cy:open
 ```
+## **INTEGRAÇÃO CONTÍNUA**
+Para consultar as rotinas de execução dos testes (pipeline) basta clicar no check verde ao lado direito no repositório
+
