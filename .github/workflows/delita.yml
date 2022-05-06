@@ -7,7 +7,7 @@ on:
     branches: [ delita ]
 
 jobs:
-  test:
+  teste:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
