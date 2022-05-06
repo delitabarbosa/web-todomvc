@@ -34,13 +34,13 @@ Após isso, executar no terminal o comando para instalar as dependências utiliz
 ```.bash
 yarn install
 ```
-Para executar em modo headless, executar no terminal o comando:
+Para executar os testes em modo headless, executar no terminal o comando:
 
 ```.bash
 yarn cy:to-do-mvc
 ```
 
-Para executar em modo interativo, executar no terminal o comando e selecionar a spec que deseja executar (nessa opção você consegue "assistir" os testes sendo executados, pode verificar os passos e cada execução dos cenários)
+Para executar os testes em modo interativo, executar no terminal o comando e selecionar a spec que deseja executar (nessa opção você consegue "assistir" os testes sendo executados, pode verificar os passos e cada execução dos cenários)
 
 ```.bash
 yarn cy:open
